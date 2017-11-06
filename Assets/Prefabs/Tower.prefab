@@ -349,7 +349,7 @@ MonoBehaviour:
   cannonTransform: {fileID: 4999468870225296}
   targetEnemy: {fileID: 0}
   shooter: {fileID: 114445618202607030}
-  activationDistance: 5
+  activationDistance: 6
 --- !u!114 &114445618202607030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,4 +362,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4603653927011254}
-  fireRate: 0.1
+  fireRate: 2
