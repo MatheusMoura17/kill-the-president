@@ -6,11 +6,6 @@ public class Tower : MonoBehaviour {
 
 	public Transform cannonTransform;
 	public Transform targetEnemy;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
