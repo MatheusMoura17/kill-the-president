@@ -348,6 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannonTransform: {fileID: 4999468870225296}
   targetEnemy: {fileID: 0}
+  shooter: {fileID: 114445618202607030}
+  activationDistance: 5
 --- !u!114 &114445618202607030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,6 +361,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a7744d554e34f81a51961d35e4124b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPrefab: {fileID: 0}
   spawnPoint: {fileID: 4603653927011254}
-  fireRate: 2
+  fireRate: 0.1

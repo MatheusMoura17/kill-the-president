@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour {
 
-	public GameObject shootPrefab;
 	public Transform spawnPoint;
 	public float fireRate = 2;
 	private float fireTimer=0;
 	private bool canShoot;
+
+	private BulletSpawner spawner;
+
+	void Start(){
+		spawner = BulletSpawner.instance;
+	}
 
 	void Update () {
 		if (!canShoot) {
@@ -22,9 +27,10 @@ public class Shooter : MonoBehaviour {
 		canShoot = false;
 	}
 
-	public void Shoot(){
+	public void ShootAt(Transform targetEnemy){
 		if (canShoot) {
-			Instantiate (shootPrefab, spawnPoint.position, spawnPoint.rotation);
+			GameObject gm=spawner.SpawnBullet (spawnPoint.position, spawnPoint.rotation);
+			gm.GetComponent<Bullet>().targetTransform=targetEnemy;
 			ResetShoot ();
 		}
 	}

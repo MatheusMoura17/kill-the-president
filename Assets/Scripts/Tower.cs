@@ -6,10 +6,15 @@ public class Tower : MonoBehaviour {
 
 	public Transform cannonTransform;
 	public Transform targetEnemy;
+	public Shooter shooter;
+	public float activationDistance=5;
 
 	void Update () {
-		Vector3 position = targetEnemy.position;
-		position.y = cannonTransform.position.y;
-		cannonTransform.LookAt (position);
+		if (Vector3.Distance (transform.position, targetEnemy.position) <= activationDistance) {
+			Vector3 position = targetEnemy.position;
+			position.y = cannonTransform.position.y;
+			cannonTransform.LookAt (position);
+			shooter.ShootAt (targetEnemy);
+		}
 	}
 }
