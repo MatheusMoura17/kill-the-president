@@ -12,8 +12,8 @@ public class Tower : MonoBehaviour {
 	}
 
 	public Transform cannonTransform;
-	public Transform targetEnemy;
 	public Shooter shooter;
+	public TargetLooker targetLooker;
 	public float activationDistance=5;
 	private Stats currentStat;
 
@@ -33,18 +33,19 @@ public class Tower : MonoBehaviour {
 
 	private void Search(){
 		cannonTransform.Rotate (0, 25 * Time.deltaTime, 0);
-
-		if (Vector3.Distance (transform.position, targetEnemy.position) <= activationDistance)
+		if (!targetLooker.target)
+			return;
+		if (Vector3.Distance (transform.position, targetLooker.target.transform.position) <= activationDistance)
 			currentStat = Stats.SHOOTING;
 	}
 
 	private void Shoot(){
-		Vector3 position = targetEnemy.position;
+		Vector3 position = targetLooker.target.transform.position;
 		position.y = cannonTransform.position.y;
 		cannonTransform.LookAt (position);
-		shooter.ShootAt (targetEnemy);
+		shooter.ShootAt (targetLooker.target.transform);
 		
-		if (Vector3.Distance (transform.position, targetEnemy.position) > activationDistance)
+		if (Vector3.Distance (transform.position, targetLooker.transform.position) > activationDistance)
 			currentStat = Stats.SEARCHING;
 	}
 

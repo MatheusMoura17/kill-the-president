@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 95740539253435922}
   - component: {fileID: 114107869111732874}
   - component: {fileID: 114445618202607030}
+  - component: {fileID: 114512261769468478}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -347,8 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonTransform: {fileID: 4999468870225296}
-  targetEnemy: {fileID: 0}
   shooter: {fileID: 114445618202607030}
+  targetLooker: {fileID: 114512261769468478}
   activationDistance: 6
 --- !u!114 &114445618202607030
 MonoBehaviour:
@@ -363,3 +364,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4603653927011254}
   fireRate: 2
+--- !u!114 &114512261769468478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847700422065480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59b73aaa5cf448bd98d396975d2ee89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementSpawner: {fileID: 0}
