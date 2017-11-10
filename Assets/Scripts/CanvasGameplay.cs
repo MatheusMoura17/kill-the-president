@@ -10,6 +10,7 @@ public class CanvasGameplay : MonoBehaviour {
     public Canvas gameplay;
 
     public Button militantes;
+    public Text moeda;
 
     public Button over;
     public Button Winner;
@@ -22,6 +23,7 @@ public class CanvasGameplay : MonoBehaviour {
         gameplay = GetComponent<Canvas>();
 
         militantes = GetComponent<Button>();
+        moeda = GetComponent<Text>();
 
         over = GetComponent<Button>();
         Winner = GetComponent<Button>();
@@ -30,7 +32,19 @@ public class CanvasGameplay : MonoBehaviour {
         telaVitoria.enabled = false;
         telaGameOver.enabled = false;
 	}
-	
+
+    // Método para colocar os militantes na tela
+    public void AdicionandoMilitantes()
+    {
+
+    }
+
+	//Método para adcionar moeda
+    public void Money()
+    {
+
+    }
+
 	public void GameOverPress()
     {
         gameplay.enabled = false;

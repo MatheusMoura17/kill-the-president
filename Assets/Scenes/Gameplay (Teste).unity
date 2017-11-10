@@ -321,6 +321,7 @@ MonoBehaviour:
   telaVitoria: {fileID: 2082633252}
   gameplay: {fileID: 1459366759}
   militantes: {fileID: 23626264}
+  moeda: {fileID: 1396803347}
   over: {fileID: 1362278587}
   Winner: {fileID: 321943721}
 --- !u!4 &135887963
@@ -1033,7 +1034,7 @@ GameObject:
   - component: {fileID: 1396803348}
   - component: {fileID: 1396803347}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Textmoeda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
