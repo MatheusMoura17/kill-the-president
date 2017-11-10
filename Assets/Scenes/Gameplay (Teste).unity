@@ -319,6 +319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   telaGameOver: {fileID: 470226849}
   telaVitoria: {fileID: 2082633252}
+  gameplay: {fileID: 1459366759}
+  militantes: {fileID: 23626264}
   over: {fileID: 1362278587}
   Winner: {fileID: 321943721}
 --- !u!4 &135887963
