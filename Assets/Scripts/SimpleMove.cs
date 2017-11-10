@@ -5,17 +5,48 @@ using UnityEngine.AI;
 
 public class SimpleMove : MonoBehaviour {
 
+	public enum Stats
+	{
+		MOVING,
+		ATTACKING
+	}
+
+	public Animator animator;
 	public TargetLooker targetLooker;
 	public NavMeshAgent agent;
-	// Use this for initialization
-	void Start () {
-		
-	}
+	public float range=3;
+	private bool attacking;
+	private Stats currentStat;
 	
 	// Update is called once per frame
 	void Update () {
-		if (targetLooker.target)
+		switch(currentStat){
+		case Stats.MOVING:
+			Move();
+			break;
+		case Stats.ATTACKING:
+			Attack();
+			break;
+		}
+	}
+
+	private void Move(){
+		if (targetLooker.target){
 			agent.destination = targetLooker.target.transform.position;
-		//transform.Translate (0, 0, 1 * Time.deltaTime);
+			if (agent.remainingDistance <= range) {
+				animator.SetBool ("attacking", true);
+				currentStat = Stats.ATTACKING;
+			}
+		}
+	}
+
+	private void Attack(){
+		if (targetLooker.target){
+			agent.destination = targetLooker.target.transform.position;
+			if (agent.remainingDistance > range) {
+				animator.SetBool ("attacking", false);
+				currentStat = Stats.MOVING;
+			}
+		}
 	}
 }

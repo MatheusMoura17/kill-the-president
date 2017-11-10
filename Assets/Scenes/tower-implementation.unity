@@ -6059,6 +6059,11 @@ Prefab:
       propertyPath: elementSpawner
       value: 
       objectReference: {fileID: 389641940}
+    - target: {fileID: 114231209045579066, guid: e960d9f4b6c1743fd9d327da857488e1,
+        type: 2}
+      propertyPath: range
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e960d9f4b6c1743fd9d327da857488e1, type: 2}
   m_IsPrefabParent: 0

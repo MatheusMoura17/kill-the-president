@@ -533,11 +533,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4886462472720954}
-  - component: {fileID: 111213231587653664}
   - component: {fileID: 136189920483209372}
   - component: {fileID: 114452256674932862}
   - component: {fileID: 195696336914130804}
   - component: {fileID: 114231209045579066}
+  - component: {fileID: 95253001343813248}
   m_Layer: 0
   m_Name: Meliant
   m_TagString: Untagged
@@ -1401,23 +1401,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049706426545520}
   m_Mesh: {fileID: 4300000, guid: 39bca097b5fe844cdaebdac66b571620, type: 3}
---- !u!111 &111213231587653664
-Animation:
+--- !u!95 &95253001343813248
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699032790738354}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 39bca097b5fe844cdaebdac66b571620, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 39bca097b5fe844cdaebdac66b571620, type: 3}
-  - {fileID: 7400002, guid: 39bca097b5fe844cdaebdac66b571620, type: 3}
-  - {fileID: 7400004, guid: 39bca097b5fe844cdaebdac66b571620, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f44afc689b2a44908af6bfa86ec61a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114231209045579066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1429,8 +1429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd3c8d39a9f84de19ec4afe69340c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95253001343813248}
   targetLooker: {fileID: 114452256674932862}
   agent: {fileID: 195696336914130804}
+  range: 3
 --- !u!114 &114452256674932862
 MonoBehaviour:
   m_ObjectHideFlags: 1
