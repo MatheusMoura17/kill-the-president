@@ -18,6 +18,7 @@ public class Meliant : MonoBehaviour {
 	private bool attacking;
 	private Stats currentStat;
 	public Shooter shooter;
+	public Damagable damagable;
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,6 +34,12 @@ public class Meliant : MonoBehaviour {
 
 	public void Reset(){
 		currentStat = Stats.MOVING;
+		shooter.ResetShoot ();
+		damagable.Reset ();
+	}
+
+	public void Enable(){
+		Reset ();
 	}
 
 	private void Move(){

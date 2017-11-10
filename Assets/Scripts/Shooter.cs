@@ -9,6 +9,7 @@ public class Shooter : MonoBehaviour {
 	private float fireTimer=0;
 	private bool canShoot;
 	public int damage;
+	public string owner;
 
 	private BulletSpawner spawner;
 
@@ -23,7 +24,7 @@ public class Shooter : MonoBehaviour {
 		}
 	}
 
-	void ResetShoot(){
+	public void ResetShoot(){
 		fireTimer = 0;
 		canShoot = false;
 	}
@@ -32,6 +33,7 @@ public class Shooter : MonoBehaviour {
 		if (canShoot) {
 			GameObject gm=spawner.SpawnBullet (spawnPoint.position, spawnPoint.rotation);
 			Bullet bullet = gm.GetComponent<Bullet> ();
+			bullet.owner = owner;
 			bullet.damage = damage;
 			bullet.targetTransform=targetEnemy;
 			ResetShoot ();

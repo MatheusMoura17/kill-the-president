@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour {
 	public float speed;
 	public Transform targetTransform;
 	public int damage;
+	public string owner;
 
 	void Update () {
 		if (targetTransform) {
