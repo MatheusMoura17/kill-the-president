@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
 
 	public float speed;
 	public Transform targetTransform;
+	public int damage;
 
 	void Update () {
 		if (targetTransform) {
@@ -14,7 +15,7 @@ public class Bullet : MonoBehaviour {
 				targetTransform.position, 
 				speed * Time.deltaTime);
 
-			if (Vector3.Distance (targetTransform.position, transform.position) < 0.1f) {
+			if (Vector3.Distance (targetTransform.position, transform.position) == 0) {
 				targetTransform = null;
 				gameObject.SetActive (false);
 			}

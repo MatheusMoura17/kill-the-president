@@ -8,6 +8,7 @@ public class Shooter : MonoBehaviour {
 	public float fireRate = 2;
 	private float fireTimer=0;
 	private bool canShoot;
+	public int damage;
 
 	private BulletSpawner spawner;
 
@@ -30,7 +31,9 @@ public class Shooter : MonoBehaviour {
 	public void ShootAt(Transform targetEnemy){
 		if (canShoot) {
 			GameObject gm=spawner.SpawnBullet (spawnPoint.position, spawnPoint.rotation);
-			gm.GetComponent<Bullet>().targetTransform=targetEnemy;
+			Bullet bullet = gm.GetComponent<Bullet> ();
+			bullet.damage = damage;
+			bullet.targetTransform=targetEnemy;
 			ResetShoot ();
 		}
 	}

@@ -40,6 +40,10 @@ public class Tower : MonoBehaviour {
 	}
 
 	private void Shoot(){
+		if (!targetLooker.target) {
+			currentStat = Stats.SEARCHING;
+			return;
+		}
 		Vector3 position = targetLooker.target.transform.position;
 		position.y = cannonTransform.position.y;
 		cannonTransform.LookAt (position);
