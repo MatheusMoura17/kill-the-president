@@ -33,6 +33,7 @@ public class MeliantSpawner : MonoBehaviour, ISpawner {
 		}
 
 		GameObject tmpGo=Instantiate (meliantPrefab,position,rotation,transform);
+		tmpGo.GetComponent<TargetLooker> ().elementSpawner = TowerSpawner.instance.gameObject;
 		spawnedMeliants.Add(tmpGo);
 		return tmpGo;
 	}
