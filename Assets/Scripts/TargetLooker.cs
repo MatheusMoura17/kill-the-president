@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetLooker : MonoBehaviour {
 
 	public GameObject elementSpawner;
-	[HideInInspector]
+	//[HideInInspector]
 	public GameObject target;
 	private ISpawner spawner;
 

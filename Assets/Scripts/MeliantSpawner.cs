@@ -25,6 +25,7 @@ public class MeliantSpawner : MonoBehaviour, ISpawner {
 	public GameObject Spawn(Vector3 position, Quaternion rotation){
 		foreach (GameObject go in spawnedMeliants){
 			if (!go.activeSelf) {
+				go.GetComponent<Meliant> ().Reset ();
 				go.transform.position = position;
 				go.transform.rotation = rotation;
 				go.SetActive (true);
