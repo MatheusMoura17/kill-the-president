@@ -217,37 +217,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114107869111732874, guid: 85763958ac49c403bb34c97de7c9449b,
-        type: 2}
-      propertyPath: targetEnemy
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1847700422065480, guid: 85763958ac49c403bb34c97de7c9449b, type: 2}
       propertyPath: m_Name
       value: Tower (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114445618202607030, guid: 85763958ac49c403bb34c97de7c9449b,
-        type: 2}
-      propertyPath: fireRate
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114512261769468478, guid: 85763958ac49c403bb34c97de7c9449b,
         type: 2}
       propertyPath: elementSpawner
       value: 
       objectReference: {fileID: 624587689}
-    - target: {fileID: 4318163439211532, guid: 85763958ac49c403bb34c97de7c9449b, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999468870225296, guid: 85763958ac49c403bb34c97de7c9449b, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4264403924337074, guid: 85763958ac49c403bb34c97de7c9449b, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85763958ac49c403bb34c97de7c9449b, type: 2}
   m_IsPrefabParent: 0
@@ -1431,6 +1409,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc599d40cc66f440b943fa88210f6c9a, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &514616966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 514616967}
+  m_Layer: 0
+  m_Name: Cannon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514616967
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 514616966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1129926240}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &545948133
 Prefab:
   m_ObjectHideFlags: 0
@@ -1827,6 +1833,34 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 410720, guid: 12bb450a972586d41aee175c5e7a73b2, type: 2}
   m_PrefabInternal: {fileID: 640576002}
+--- !u!1 &653298187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 653298188}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653298188
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653298187}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.95500004, z: 1.4759998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1129926240}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &660003105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,6 +3084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 1547167446}
   maxLife: 5000
+  owner: tower
 --- !u!4 &1129926240 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400052, guid: 6dfd6f683c93f4ce1a1cf55aed07cecd, type: 3}
@@ -3081,6 +3116,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1129926243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129926238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a7744d554e34f81a51961d35e4124b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 653298188}
+  fireRate: 0.5
+  damage: 100
+  owner: tower
+--- !u!114 &1129926244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129926238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59b73aaa5cf448bd98d396975d2ee89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementSpawner: {fileID: 624587689}
+  target: {fileID: 0}
+--- !u!114 &1129926245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129926238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3815a853569fb4014a1c0d4dce097f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonTransform: {fileID: 514616967}
+  shooter: {fileID: 1129926243}
+  targetLooker: {fileID: 1129926244}
+  activationDistance: 7
+  damagable: {fileID: 0}
 --- !u!1001 &1144323452
 Prefab:
   m_ObjectHideFlags: 0
@@ -5058,19 +5137,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114107869111732874, guid: 85763958ac49c403bb34c97de7c9449b,
-        type: 2}
-      propertyPath: targetEnemy
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1847700422065480, guid: 85763958ac49c403bb34c97de7c9449b, type: 2}
       propertyPath: m_Name
       value: Tower (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114445618202607030, guid: 85763958ac49c403bb34c97de7c9449b,
-        type: 2}
-      propertyPath: fireRate
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114512261769468478, guid: 85763958ac49c403bb34c97de7c9449b,
         type: 2}

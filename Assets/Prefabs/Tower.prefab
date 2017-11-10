@@ -455,6 +455,7 @@ MonoBehaviour:
   shooter: {fileID: 114445618202607030}
   targetLooker: {fileID: 114512261769468478}
   activationDistance: 6
+  damagable: {fileID: 114148965149341360}
 --- !u!114 &114148965149341360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -468,6 +469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 4718347117944420}
   maxLife: 100
+  owner: tower
 --- !u!114 &114445618202607030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -482,6 +484,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 4603653927011254}
   fireRate: 2
   damage: 50
+  owner: tower
 --- !u!114 &114512261769468478
 MonoBehaviour:
   m_ObjectHideFlags: 1

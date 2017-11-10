@@ -16,6 +16,7 @@ public class Tower : MonoBehaviour {
 	public TargetLooker targetLooker;
 	public float activationDistance=5;
 	private Stats currentStat;
+	public Damagable damagable;
 
 	void Update () {
 		switch (currentStat) {
@@ -29,6 +30,10 @@ public class Tower : MonoBehaviour {
 				Kill ();
 				break;
 		}
+	}
+
+	public void Enable(){
+		damagable.Reset ();
 	}
 
 	private void Search(){

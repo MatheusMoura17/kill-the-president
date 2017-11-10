@@ -7,8 +7,9 @@ public class Damagable : MonoBehaviour {
 	public Transform lifeBar;
 	public int maxLife = 100;
 	private int life;
+	public string owner;
 
-	void Reset(){
+	public void Reset(){
 		UpdateLife(maxLife);
 	}
 
@@ -26,9 +27,11 @@ public class Damagable : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if (col.tag == "Bullet") {
 			Bullet bullet = col.GetComponent<Bullet> ();
-			UpdateLife (life - bullet.damage);
-			if (life <= 0)
-				gameObject.SetActive (false);
+			if (bullet.owner != owner) {
+				UpdateLife (life - bullet.damage);
+				if (life <= 0)
+					gameObject.SetActive (false);
+			}
 		}
 	}
 
