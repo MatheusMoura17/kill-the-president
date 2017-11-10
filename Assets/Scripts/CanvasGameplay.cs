@@ -15,8 +15,14 @@ public class CanvasGameplay : MonoBehaviour {
     public Button over;
     public Button Winner;
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+
+        telaVitoria.enabled = false;
+        telaGameOver.enabled = false;
+    }
+
+    void Update () {
 
         telaGameOver = GetComponent<Canvas>();
         telaVitoria = GetComponent<Canvas>();
@@ -28,9 +34,6 @@ public class CanvasGameplay : MonoBehaviour {
         over = GetComponent<Button>();
         Winner = GetComponent<Button>();
 
-        gameplay.enabled = true;
-        telaVitoria.enabled = false;
-        telaGameOver.enabled = false;
 	}
 
     // Método para colocar os militantes na tela
@@ -63,4 +66,5 @@ public class CanvasGameplay : MonoBehaviour {
     {
         SceneManager.LoadScene("Main Menu");
     }
+ 
 }
