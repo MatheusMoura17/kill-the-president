@@ -239,6 +239,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1442446059290808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4261771666838606}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1448629664820326
 GameObject:
   m_ObjectHideFlags: 1
@@ -541,6 +556,7 @@ GameObject:
   - component: {fileID: 95253001343813248}
   - component: {fileID: 54751027971106326}
   - component: {fileID: 114087545467540422}
+  - component: {fileID: 114630645671640982}
   m_Layer: 0
   m_Name: Meliant
   m_TagString: Untagged
@@ -867,6 +883,19 @@ Transform:
   m_Father: {fileID: 4952429461280792}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -13.700473, y: 26.13943, z: 6.7094536}
+--- !u!4 &4261771666838606
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442446059290808}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.213, y: 1.435, z: 1.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4886462472720954}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4364712620345554
 Transform:
   m_ObjectHideFlags: 1
@@ -1276,6 +1305,7 @@ Transform:
   - {fileID: 4935934694005470}
   - {fileID: 4745049933850436}
   - {fileID: 4974190270883876}
+  - {fileID: 4261771666838606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1499,13 +1529,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699032790738354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd3c8d39a9f84de19ec4afe69340c0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e798e8dd551d4f8a97c9be4a0c26c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95253001343813248}
   targetLooker: {fileID: 114452256674932862}
   agent: {fileID: 195696336914130804}
   range: 4
+  shooter: {fileID: 114630645671640982}
 --- !u!114 &114452256674932862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1519,6 +1550,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementSpawner: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &114630645671640982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699032790738354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a7744d554e34f81a51961d35e4124b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 4261771666838606}
+  fireRate: 2
+  damage: 50
 --- !u!136 &136189920483209372
 CapsuleCollider:
   m_ObjectHideFlags: 1

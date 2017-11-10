@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SimpleMove : MonoBehaviour {
+public class Meliant : MonoBehaviour {
 
 	public enum Stats
 	{
@@ -17,6 +17,7 @@ public class SimpleMove : MonoBehaviour {
 	public float range=3;
 	private bool attacking;
 	private Stats currentStat;
+	public Shooter shooter;
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,6 +31,10 @@ public class SimpleMove : MonoBehaviour {
 		}
 	}
 
+	public void Reset(){
+		currentStat = Stats.MOVING;
+	}
+
 	private void Move(){
 		if (targetLooker.target){
 			agent.destination = targetLooker.target.transform.position;
@@ -41,8 +46,9 @@ public class SimpleMove : MonoBehaviour {
 	}
 
 	private void Attack(){
-		if (targetLooker.target){
+		if (targetLooker.target && targetLooker.target.activeSelf){
 			agent.destination = targetLooker.target.transform.position;
+			shooter.ShootAt (targetLooker.target.transform);
 			if (agent.remainingDistance > range) {
 				animator.SetBool ("attacking", false);
 				currentStat = Stats.MOVING;
