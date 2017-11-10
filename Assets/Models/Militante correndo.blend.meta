@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: 39bca097b5fe844cdaebdac66b571620
+timeCreated: 1510299924
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Cube
+    100004: Cube_001
+    100006: //RootNode
+    100008: mixamorig_Head
+    100010: mixamorig_HeadTop_End
+    100012: mixamorig_Hips
+    100014: mixamorig_LeftArm
+    100016: mixamorig_LeftFoot
+    100018: mixamorig_LeftForeArm
+    100020: mixamorig_LeftHand
+    100022: mixamorig_LeftHandIndex1
+    100024: mixamorig_LeftHandIndex2
+    100026: mixamorig_LeftHandIndex3
+    100028: mixamorig_LeftHandIndex4
+    100030: mixamorig_LeftHandThumb1
+    100032: mixamorig_LeftHandThumb2
+    100034: mixamorig_LeftHandThumb3
+    100036: mixamorig_LeftHandThumb4
+    100038: mixamorig_LeftLeg
+    100040: mixamorig_LeftShoulder
+    100042: mixamorig_LeftToe_End
+    100044: mixamorig_LeftToeBase
+    100046: mixamorig_LeftUpLeg
+    100048: mixamorig_Neck
+    100050: mixamorig_RightArm
+    100052: mixamorig_RightFoot
+    100054: mixamorig_RightForeArm
+    100056: mixamorig_RightHand
+    100058: mixamorig_RightHandIndex1
+    100060: mixamorig_RightHandIndex2
+    100062: mixamorig_RightHandIndex3
+    100064: mixamorig_RightHandIndex4
+    100066: mixamorig_RightHandThumb1
+    100068: mixamorig_RightHandThumb2
+    100070: mixamorig_RightHandThumb3
+    100072: mixamorig_RightHandThumb4
+    100074: mixamorig_RightLeg
+    100076: mixamorig_RightShoulder
+    100078: mixamorig_RightToe_End
+    100080: mixamorig_RightToeBase
+    100082: mixamorig_RightUpLeg
+    100084: mixamorig_Spine
+    100086: mixamorig_Spine1
+    100088: mixamorig_Spine2
+    400000: Armature
+    400002: Cube
+    400004: Cube_001
+    400006: //RootNode
+    400008: mixamorig_Head
+    400010: mixamorig_HeadTop_End
+    400012: mixamorig_Hips
+    400014: mixamorig_LeftArm
+    400016: mixamorig_LeftFoot
+    400018: mixamorig_LeftForeArm
+    400020: mixamorig_LeftHand
+    400022: mixamorig_LeftHandIndex1
+    400024: mixamorig_LeftHandIndex2
+    400026: mixamorig_LeftHandIndex3
+    400028: mixamorig_LeftHandIndex4
+    400030: mixamorig_LeftHandThumb1
+    400032: mixamorig_LeftHandThumb2
+    400034: mixamorig_LeftHandThumb3
+    400036: mixamorig_LeftHandThumb4
+    400038: mixamorig_LeftLeg
+    400040: mixamorig_LeftShoulder
+    400042: mixamorig_LeftToe_End
+    400044: mixamorig_LeftToeBase
+    400046: mixamorig_LeftUpLeg
+    400048: mixamorig_Neck
+    400050: mixamorig_RightArm
+    400052: mixamorig_RightFoot
+    400054: mixamorig_RightForeArm
+    400056: mixamorig_RightHand
+    400058: mixamorig_RightHandIndex1
+    400060: mixamorig_RightHandIndex2
+    400062: mixamorig_RightHandIndex3
+    400064: mixamorig_RightHandIndex4
+    400066: mixamorig_RightHandThumb1
+    400068: mixamorig_RightHandThumb2
+    400070: mixamorig_RightHandThumb3
+    400072: mixamorig_RightHandThumb4
+    400074: mixamorig_RightLeg
+    400076: mixamorig_RightShoulder
+    400078: mixamorig_RightToe_End
+    400080: mixamorig_RightToeBase
+    400082: mixamorig_RightUpLeg
+    400084: mixamorig_Spine
+    400086: mixamorig_Spine1
+    400088: mixamorig_Spine2
+    4300000: Cube_001
+    4300002: Cube
+    7400000: Default Take
+    7400002: Armature_mixamo_com_Layer0
+    7400004: Armature_mixamo_com_Layer0_001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Cube
+    13700002: Cube_001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: dc39df46d1c334159b90172d89ec5e39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled
+    second: {fileID: 2100000, guid: 2d9550b93f4a843eb9b17cf668c56fc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_001
+    second: {fileID: 2100000, guid: fb6997103996c4900983c3909a2d721d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_002
+    second: {fileID: 2100000, guid: 9043f76f0fd89405f864498459e5dd2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_003
+    second: {fileID: 2100000, guid: 9d416e7625c724fe69a75b8b6331b067, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_004
+    second: {fileID: 2100000, guid: e1255b24d8e564fbfb3378992113fddf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_005
+    second: {fileID: 2100000, guid: baca1839776cb4953a64e3622e6d3b4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_006
+    second: {fileID: 2100000, guid: 77f0f1c3719fd4db1b70143424ccd186, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Untitled_007
+    second: {fileID: 2100000, guid: eee1fe7a6d9be48a9ac317367a7bb6c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__Untitled_005
+    second: {fileID: 2100000, guid: 902dab0f6599941ad86038a71babe0b3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
