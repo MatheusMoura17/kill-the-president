@@ -14,6 +14,7 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 
 	public Damagable presidentDamagable;
 	public MeliantSpawner meliantSpawner;
+	public List<Vector2> ocupedPositions=new List<Vector2>();
 
 
 	void Awake () {
@@ -34,10 +35,17 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 				(int)GameManager.instance.time,
 				GameManager.instance.coins
 			);
-			position.x = position2d.x;
-			position.z = position2d.y;
-			Spawn (position, Quaternion.identity);
+			if (!ocupedPositions.Contains (position2d)) {
+				position.x = position2d.x;
+				position.z = position2d.y;
+				ocupedPositions.Add (position2d);
+				Spawn (position, Quaternion.identity);
+			}
 		}
+	}
+
+	public void ResetSlot(Vector2 slot){
+		ocupedPositions.Remove (slot);
 	}
 
 	public GameObject Spawn(Vector3 position, Quaternion rotation){
@@ -52,6 +60,7 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 
 		GameObject tmpGo=Instantiate (towerPrefab,position,rotation,transform);
 		tmpGo.GetComponent<TargetLooker> ().elementSpawner = meliantSpawner.gameObject;
+		tmpGo.GetComponent<Damagable> ().onDestroy = new System.Action (() => ResetSlot (new Vector2 (position.x, position.z)));
 		spawnedTowers.Add(tmpGo);
 		return tmpGo;
 	}

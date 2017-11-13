@@ -101,8 +101,8 @@ public class TreeDecision : MonoBehaviour {
 	}
 
 	public Vector2 Compute(int presidentLife,int towers,int meliants,int time,int playerMoney){
-		string presidentLifeString = presidentLife >= 900 ? ">=900" : "<900";
-		string towersString = towers >= 3 ? ">=3" : "<3";
+		string presidentLifeString = presidentLife >= 500 ? ">=500" : "<500";
+		string towersString = towers >= 2 ? ">=2" : "<2";
 		string meliantsString = meliants >= 2 ? ">=2" : "<2";
 		string timeString = time >= 60 ? ">=60" : "<60";
 		string playerMoneyString = playerMoney >= 300 ? ">=300" : "<300";
