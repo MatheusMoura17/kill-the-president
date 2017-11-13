@@ -35,7 +35,7 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 				(int)GameManager.instance.time,
 				GameManager.instance.coins
 			);
-			if (!ocupedPositions.Contains (position2d)) {
+			if (position2d!=Vector2.zero && !ocupedPositions.Contains (position2d)) {
 				position.x = position2d.x;
 				position.z = position2d.y;
 				ocupedPositions.Add (position2d);

@@ -107,17 +107,17 @@ public class TreeDecision : MonoBehaviour {
 		else if(presidentLife<=300)
 			presidentLifeString="CRITICAL";
 
-		string towersString = "NONE";
+		string towersString = "NONE_T";
 		if (towers >= 1 && towers <=2)
-			towersString = "NORMAL";
+			towersString = "NORMAL_T";
 		else if (towers >= 3) 
-			towersString = "BIG";
+			towersString = "BIG_T";
 
-		string meliantsString = "NONE";
+		string meliantsString = "NONE_M";
 		if (meliants >= 1 && meliants <= 3)
-			meliantsString = "NORMAL";
+			meliantsString = "NORMAL_M";
 		else if (meliants >= 4)
-			meliantsString = "BIG";
+			meliantsString = "BIG_M";
 		
 		string timeString = time >= 60 ? ">=60" : "<60";
 		string playerMoneyString = playerMoney >= 300 ? ">=300" : "<300";
