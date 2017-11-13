@@ -20,6 +20,7 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 		//	if(Physics.Raycast(position,Camera.main.transform.forward, out hit))
 		//		Spawn (hit.point,Quaternion.identity);
 		//}
+
 	}
 
 	public GameObject Spawn(Vector3 position, Quaternion rotation){
