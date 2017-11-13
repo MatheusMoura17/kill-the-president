@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeliantSpawner : MonoBehaviour, ISpawner {
 
 	public static MeliantSpawner instance;
+	public GameObject alertPrefab;
 	public GameObject meliantPrefab;
 	private List<GameObject> spawnedMeliants;
 
@@ -18,8 +19,15 @@ public class MeliantSpawner : MonoBehaviour, ISpawner {
 			Vector3 position=Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			RaycastHit hit;
 			if(Physics.Raycast(position,Camera.main.transform.forward, out hit))
-				Spawn (hit.point,Quaternion.identity);
+				if(hit.collider.gameObject.CompareTag("Ground"))
+					Spawn (hit.point,Quaternion.identity);
+				else
+					SpawnAlert (hit.point,Quaternion.identity);
 		}
+	}
+
+	public void SpawnAlert(Vector3 position, Quaternion rotation){
+		Instantiate(alertPrefab,position,rotation);
 	}
 
 	public GameObject Spawn(Vector3 position, Quaternion rotation){
