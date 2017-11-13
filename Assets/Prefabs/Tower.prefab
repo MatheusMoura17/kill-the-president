@@ -470,6 +470,8 @@ MonoBehaviour:
   lifeBar: {fileID: 4718347117944420}
   maxLife: 600
   owner: tower
+  coinsToDrop: 150
+  dropEffect: {fileID: 1637752550670724, guid: eeb4620a6d6e62b4583249edcc5287ee, type: 2}
 --- !u!114 &114445618202607030
 MonoBehaviour:
   m_ObjectHideFlags: 1

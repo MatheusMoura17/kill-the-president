@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
+	public CanvasGameplay uiFacade;
 	private int coins;
 
 	void Awake(){
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		UpdateMoney (200);
 	}
 	
 	// Update is called once per frame
@@ -23,13 +24,18 @@ public class GameManager : MonoBehaviour {
 
 	public bool ConsumeMoney(int value){
 		if (coins - value >= 0) {
-			coins -= value;
+			UpdateMoney (coins - value);
 			return true;
 		}
 		return false;
 	}
 
 	public void AddCoins(int value){
-		coins += value;
+		UpdateMoney (coins + value);
+	}
+
+	private void UpdateMoney(int value){
+		coins = value;
+		uiFacade.SetMoney (coins);
 	}
 }
