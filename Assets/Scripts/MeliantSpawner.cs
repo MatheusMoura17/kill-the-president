@@ -6,8 +6,10 @@ public class MeliantSpawner : MonoBehaviour, ISpawner {
 
 	public static MeliantSpawner instance;
 	public GameObject alertPrefab;
+	public GameObject moneyAlertPrefab;
 	public GameObject meliantPrefab;
 	private List<GameObject> spawnedMeliants;
+	public int price;
 
 	void Awake () {
 		spawnedMeliants = new List<GameObject> ();
@@ -18,16 +20,19 @@ public class MeliantSpawner : MonoBehaviour, ISpawner {
 		if (Input.GetMouseButtonDown (0)) {
 			Vector3 position=Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			RaycastHit hit;
-			if(Physics.Raycast(position,Camera.main.transform.forward, out hit))
-				if(hit.collider.gameObject.CompareTag("Ground"))
-					Spawn (hit.point,Quaternion.identity);
-				else
-					SpawnAlert (hit.point,Quaternion.identity);
+			if (Physics.Raycast (position, Camera.main.transform.forward, out hit))
+			if (hit.collider.gameObject.CompareTag ("Ground")) {
+				if (GameManager.instance.ConsumeMoney (price)) {
+					Spawn (hit.point, Quaternion.identity);
+				} else {
+					//não tem moedas suficientes
+					Instantiate(moneyAlertPrefab,hit.point,Quaternion.identity);
+				}
+			} else {
+				//clicou em uma area errada
+				Instantiate(alertPrefab,hit.point,Quaternion.identity);
+			}
 		}
-	}
-
-	public void SpawnAlert(Vector3 position, Quaternion rotation){
-		Instantiate(alertPrefab,position,rotation);
 	}
 
 	public GameObject Spawn(Vector3 position, Quaternion rotation){

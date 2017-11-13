@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
+	public bool ConsumeMoney(int value){
+		if (coins - value >= 0) {
+			coins -= value;
+			return true;
+		}
+		return false;
+	}
+
 	public void AddCoins(int value){
 		coins += value;
 	}
