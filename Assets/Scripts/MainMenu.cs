@@ -14,6 +14,6 @@ public class MainMenu : MonoBehaviour {
 	
 	public void GameplayLevel()
     {
-        SceneManager.LoadScene("Gameplay (Teste)");
+        SceneManager.LoadScene("Game Play");
     }
 }

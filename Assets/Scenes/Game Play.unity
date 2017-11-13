@@ -1778,7 +1778,7 @@ MonoBehaviour:
     type: 2}
   spawnedTowers:
   - {fileID: 1129926238}
-  ratio: 1.5
+  ratio: 3
   defaultY: 0.64
   presidentDamagable: {fileID: 1129926243}
   meliantSpawner: {fileID: 624587691}

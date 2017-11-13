@@ -28,7 +28,7 @@ public class TreeDecision : MonoBehaviour {
 
 	private void Train() {
 		DataTable data = GetDataTable(Application.dataPath +"/"+ trainData);
-		DebugTable(data);
+		//DebugTable(data);
 		codebook = new Codification(data);
 		DataTable symbols = codebook.Apply(data);
 
@@ -101,9 +101,24 @@ public class TreeDecision : MonoBehaviour {
 	}
 
 	public Vector2 Compute(int presidentLife,int towers,int meliants,int time,int playerMoney){
-		string presidentLifeString = presidentLife >= 500 ? ">=500" : "<500";
-		string towersString = towers >= 2 ? ">=2" : "<2";
-		string meliantsString = meliants >= 2 ? ">=2" : "<2";
+		string presidentLifeString = "FULL";
+		if(presidentLife<700 && presidentLife>300)
+			presidentLifeString="NORMAL";
+		else if(presidentLife<=300)
+			presidentLifeString="CRITICAL";
+
+		string towersString = "NONE";
+		if (towers >= 1 && towers <=2)
+			towersString = "NORMAL";
+		else if (towers >= 3) 
+			towersString = "BIG";
+
+		string meliantsString = "NONE";
+		if (meliants >= 1 && meliants <= 3)
+			meliantsString = "NORMAL";
+		else if (meliants >= 4)
+			meliantsString = "BIG";
+		
 		string timeString = time >= 60 ? ">=60" : "<60";
 		string playerMoneyString = playerMoney >= 300 ? ">=300" : "<300";
 		return Rank (presidentLifeString, towersString, meliantsString, timeString, playerMoneyString);
@@ -123,10 +138,7 @@ public class TreeDecision : MonoBehaviour {
 			int predicted = tree.Decide(query);
 
 			string answer = codebook.Revert("POSITION", predicted);
-			Debug.Log(name + " : " + answer);
 			string[] splited=answer.Split('x');
-			print(float.Parse(splited[0],CultureInfo.InvariantCulture.NumberFormat));
-			print(splited[1]);
 			return new Vector2(
 				float.Parse(splited[0],CultureInfo.InvariantCulture.NumberFormat),
 				float.Parse(splited[1],CultureInfo.InvariantCulture.NumberFormat)
@@ -135,25 +147,4 @@ public class TreeDecision : MonoBehaviour {
 			return Vector2.zero;
 		}
 	}
-
-	/*private bool Rank(string presidentLife,string towers,string meliants,string time,string playerMoney) {
-		try {
-			int[] query = codebook.Transform(new[,]
-				{
-					{ "LIFE",		presidentLife },
-					{ "TOWERS",		towers},
-					{ "MELIANTS",	meliants },
-					{ "TIME",		time},
-					{ "ENEMY_COINS",playerMoney},
-				});
-
-			int predicted = tree.Decide(query);
-
-			string answer = codebook.Revert("POSITION", predicted);
-			Debug.Log(name + " : " + answer);
-			//return answer == "True" ? true : false;
-		} catch (Exception) {
-			return null;
-		}
-	}*/
 }
