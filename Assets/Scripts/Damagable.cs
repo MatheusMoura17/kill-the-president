@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class Damagable : MonoBehaviour {
 
 	public Transform lifeBar;
@@ -10,6 +10,7 @@ public class Damagable : MonoBehaviour {
 	public string owner;
 	public int coinsToDrop=0;
 	public GameObject dropEffect;
+	public Action onDestroy; 
 
 	public void Reset(){
 		UpdateLife(maxLife);
@@ -48,6 +49,7 @@ public class Damagable : MonoBehaviour {
 				position.z -= 5.3f;
 				Instantiate (dropEffect,position,transform.rotation);
 			}
+			onDestroy.Invoke ();
 			gameObject.SetActive (false);
 		}
 	}

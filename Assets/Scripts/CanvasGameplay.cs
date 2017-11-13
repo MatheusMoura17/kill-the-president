@@ -23,14 +23,14 @@ public class CanvasGameplay : MonoBehaviour {
 		moeda.text = value.ToString ();
     }
 
-	public void GameOverPress()
+	public void ShowGameOver()
     {
         gameplay.enabled = false;
         telaGameOver.enabled = true;
         telaVitoria.enabled = false;
     }
 
-    public void TelaVitoriaPress()
+    public void ShowGameWin()
     {
         gameplay.enabled = false;
         telaVitoria.enabled = true;
@@ -41,5 +41,10 @@ public class CanvasGameplay : MonoBehaviour {
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+	public void ReOpenLevel()
+	{
+		SceneManager.LoadScene("Game Play");
+	}
  
 }

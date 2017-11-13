@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 	public CanvasGameplay uiFacade;
+	public Damagable targetDamagable;
 	private int coins;
 
 	void Awake(){
@@ -14,12 +15,21 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		targetDamagable.onDestroy += DefineGameWin;
 		UpdateMoney (200);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void DefineGameWin(){
+		uiFacade.ShowGameWin ();
+	}
+
+	public void DefineGameOver(){
+		uiFacade.ShowGameOver ();
 	}
 
 	public bool ConsumeMoney(int value){
