@@ -9,43 +9,18 @@ public class CanvasGameplay : MonoBehaviour {
     public Canvas telaVitoria;
     public Canvas gameplay;
 
-    public Button militantes;
     public Text moeda;
-
-    public Button over;
-    public Button Winner;
 
     void Start()
     {
-
         telaVitoria.enabled = false;
         telaGameOver.enabled = false;
     }
 
-    void Update () {
-
-        telaGameOver = GetComponent<Canvas>();
-        telaVitoria = GetComponent<Canvas>();
-        gameplay = GetComponent<Canvas>();
-
-        militantes = GetComponent<Button>();
-        moeda = GetComponent<Text>();
-
-        over = GetComponent<Button>();
-        Winner = GetComponent<Button>();
-
-	}
-
-    // Método para colocar os militantes na tela
-    public void AdicionandoMilitantes()
-    {
-
-    }
-
 	//Método para adcionar moeda
-    public void Money()
+	public void SetMoney(int value)
     {
-
+		moeda.text = value.ToString ();
     }
 
 	public void GameOverPress()
