@@ -38,7 +38,7 @@ public class Damagable : MonoBehaviour {
 	void UpdateLife(int value){
 		life = value >= 0 ? value: 0;
 		Vector3 scale = lifeBar.localScale;
-		scale.x=life*0.001f;
+		scale.x = (life * 0.15f) / maxLife;
 		lifeBar.localScale = scale;
 	}
 }
