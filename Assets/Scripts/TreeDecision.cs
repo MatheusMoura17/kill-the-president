@@ -121,6 +121,7 @@ public class TreeDecision : MonoBehaviour {
 		
 		string timeString = time >= 60 ? ">=60" : "<60";
 		string playerMoneyString = playerMoney >= 300 ? ">=300" : "<300";
+		print (presidentLifeString+" "+towersString+" "+meliantsString+" "+timeString+" "+playerMoneyString);
 		return Rank (presidentLifeString, towersString, meliantsString, timeString, playerMoneyString);
 	}
 
