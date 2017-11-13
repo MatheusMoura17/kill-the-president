@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 	public static GameManager instance;
 	public CanvasGameplay uiFacade;
 	public Damagable targetDamagable;
-	private int coins;
+	public int coins;
 	public float time;
 	private bool gameRunning;
 

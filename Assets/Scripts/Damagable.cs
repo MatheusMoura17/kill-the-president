@@ -6,7 +6,7 @@ public class Damagable : MonoBehaviour {
 
 	public Transform lifeBar;
 	public int maxLife = 100;
-	private int life;
+	public int life;
 	public string owner;
 	public int coinsToDrop=0;
 	public GameObject dropEffect;

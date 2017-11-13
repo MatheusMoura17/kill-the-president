@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class TowerSpawner : MonoBehaviour, ISpawner {
 
+	public TreeDecision tree;
 	public static TowerSpawner instance;
 	public GameObject towerPrefab;
 	public List<GameObject> spawnedTowers;
+	public float ratio = 4;
+	private float counter;
+	public float defaultY=0.64f;
+
+	public Damagable presidentDamagable;
+	public MeliantSpawner meliantSpawner;
+
 
 	void Awake () {
 		//spawnedTowers = new List<GameObject> ();
@@ -14,13 +22,22 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 	}
 
 	void Update(){
-		//if (Input.GetMouseButtonDown (0)) {
-		//	Vector3 position=Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		//	RaycastHit hit;
-		//	if(Physics.Raycast(position,Camera.main.transform.forward, out hit))
-		//		Spawn (hit.point,Quaternion.identity);
-		//}
-
+		counter+=Time.deltaTime;
+		if (counter >= ratio) {
+			counter = 0;
+			Vector3 position = Vector3.zero;
+			position.y = defaultY;
+			Vector2 position2d = tree.Compute (
+				presidentDamagable.life,
+				GetSpawnedElements().Length,
+				meliantSpawner.GetSpawnedElements().Length,
+				(int)GameManager.instance.time,
+				GameManager.instance.coins
+			);
+			position.x = position2d.x;
+			position.z = position2d.y;
+			Spawn (position, Quaternion.identity);
+		}
 	}
 
 	public GameObject Spawn(Vector3 position, Quaternion rotation){
@@ -34,6 +51,7 @@ public class TowerSpawner : MonoBehaviour, ISpawner {
 		}
 
 		GameObject tmpGo=Instantiate (towerPrefab,position,rotation,transform);
+		tmpGo.GetComponent<TargetLooker> ().elementSpawner = meliantSpawner.gameObject;
 		spawnedTowers.Add(tmpGo);
 		return tmpGo;
 	}
