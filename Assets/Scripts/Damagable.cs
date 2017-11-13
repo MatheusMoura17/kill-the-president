@@ -49,7 +49,8 @@ public class Damagable : MonoBehaviour {
 				position.z -= 5.3f;
 				Instantiate (dropEffect,position,transform.rotation);
 			}
-			onDestroy.Invoke ();
+			if (onDestroy != null)
+				onDestroy.Invoke ();
 			gameObject.SetActive (false);
 		}
 	}

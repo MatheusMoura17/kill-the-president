@@ -2,19 +2,21 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CanvasGameplay : MonoBehaviour {
 
-    public Canvas telaGameOver;
-    public Canvas telaVitoria;
-    public Canvas gameplay;
+	public GameObject telaGameOver;
+	public GameObject telaVitoria;
+	public GameObject gameplay;
 
     public Text moeda;
+	public Text timer;
 
     void Start()
     {
-        telaVitoria.enabled = false;
-        telaGameOver.enabled = false;
+		telaVitoria.SetActive(false);
+		telaGameOver.SetActive(false);
     }
 
 	//Método para adcionar moeda
@@ -25,17 +27,26 @@ public class CanvasGameplay : MonoBehaviour {
 
 	public void ShowGameOver()
     {
-        gameplay.enabled = false;
-        telaGameOver.enabled = true;
-        telaVitoria.enabled = false;
+		gameplay.SetActive(false);
+		telaGameOver.SetActive(true);
+		telaVitoria.SetActive(false);
     }
 
     public void ShowGameWin()
     {
-        gameplay.enabled = false;
-        telaVitoria.enabled = true;
-        telaGameOver.enabled = false;
+		gameplay.SetActive(false);
+		telaVitoria.SetActive(true);
+		telaGameOver.SetActive(false);
     }
+
+	public void UpdateTimer(int seconds){
+		TimeSpan t = TimeSpan.FromSeconds (seconds);
+		if (seconds <= 60) {
+			timer.text = seconds.ToString ("00");
+		} else {
+			timer.text = t.Minutes+":"+t.Seconds.ToString("00");
+		}
+	}
 
     public void MainMenuLevel()
     {

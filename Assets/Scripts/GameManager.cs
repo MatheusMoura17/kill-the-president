@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 	public CanvasGameplay uiFacade;
 	public Damagable targetDamagable;
 	private int coins;
+	public float time;
+	private bool gameRunning;
 
 	void Awake(){
 		instance = this;
@@ -15,21 +17,32 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		gameRunning = true;
 		targetDamagable.onDestroy += DefineGameWin;
 		UpdateMoney (200);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (time > 0){
+			time -= Time.deltaTime;
+			uiFacade.UpdateTimer ((int)time);
+		}else
+			DefineGameOver ();
 	}
 
 	public void DefineGameWin(){
-		uiFacade.ShowGameWin ();
+		if (gameRunning) {
+			gameRunning = false;
+			uiFacade.ShowGameWin ();
+		}
 	}
 
 	public void DefineGameOver(){
-		uiFacade.ShowGameOver ();
+		if (gameRunning) {
+			gameRunning = false;
+			uiFacade.ShowGameOver ();
+		}
 	}
 
 	public bool ConsumeMoney(int value){

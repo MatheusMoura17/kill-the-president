@@ -1522,6 +1522,8 @@ MonoBehaviour:
   lifeBar: {fileID: 4935934694005470}
   maxLife: 250
   owner: meliant
+  coinsToDrop: 0
+  dropEffect: {fileID: 0}
 --- !u!114 &114231209045579066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1579,7 +1581,7 @@ CapsuleCollider:
   m_Radius: 0.29669118
   m_Height: 2.3271751
   m_Direction: 1
-  m_Center: {x: -0.30908513, y: 1.1391172, z: 0.32952416}
+  m_Center: {x: 0, y: 1.1391172, z: 0}
 --- !u!137 &137215614918642422
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
