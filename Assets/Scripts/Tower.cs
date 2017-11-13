@@ -32,7 +32,7 @@ public class Tower : MonoBehaviour {
 		}
 	}
 
-	public void Enable(){
+	public void OnEnable(){
 		damagable.Reset ();
 	}
 

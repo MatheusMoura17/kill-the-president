@@ -16,6 +16,10 @@ public class Damagable : MonoBehaviour {
 		UpdateLife(maxLife);
 	}
 
+	void OnEnable(){
+		UpdateLife (maxLife);
+	}
+
 	void Start(){
 		UpdateLife(maxLife);
 	}

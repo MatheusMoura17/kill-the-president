@@ -24,6 +24,10 @@ public class Shooter : MonoBehaviour {
 		}
 	}
 
+	void OnEnable(){
+		ResetShoot ();
+	}
+
 	public void ResetShoot(){
 		fireTimer = 0;
 		canShoot = false;
